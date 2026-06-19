@@ -4,7 +4,25 @@ Local RS-485 communication guides for CONOW devices.
 
 | File | Product | Protocol |
 |------|---------|----------|
-| [balcony-solar-storage.md](balcony-solar-storage.md) | Balcony Solar Storage (CBE2000 series) | Modbus RTU |
+| [balcony-solar-storage.md](balcony-solar-storage.md) | Balcony Solar Storage (CBE2000 Pro, Lyra Series, Atlas Series) | Modbus RTU |
+
+## Prerequisites
+
+Before using the Modbus interface, ensure the following:
+
+**1. Device is activated**
+
+The device must be commissioned and online in the CONOW ECO App at least once before the RS-485 interface becomes operational.
+
+**2. External control is enabled in the App**
+
+Depending on your App version, the setting may appear as **"DIY Mode"** or **"Enable External Control"**. Enable either one to unlock the RS-485 Modbus interface.
+
+> Screenshots for each App version:
+>
+> *(to be added)*
+
+The RS-485 interface will not respond to any Modbus commands until this setting is turned on.
 
 ## Quick Start
 
