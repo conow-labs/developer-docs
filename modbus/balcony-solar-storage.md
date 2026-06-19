@@ -16,8 +16,8 @@ The device must have been commissioned and brought online in the CONOW ECO App a
 
 Depending on your App version, use one of the following:
 
-- **Option A:** Go to **Settings → Operation Mode** and select **DIY Mode**.
-- **Option B:** Go to **Settings** and toggle on **Enable External Control**.
+- **Option A:** In the **Devices** tab, enter the device panel → **Settings → Operation Mode** → select **DIY Mode**.
+- **Option B:** In the **Devices** tab, enter the device panel → **Settings** → toggle on **Enable External Control**.
 
 The device will silently ignore all Modbus requests until one of these is enabled.
 
