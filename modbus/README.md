@@ -16,13 +16,12 @@ The device must be commissioned and online in the CONOW ECO App at least once be
 
 **2. External control is enabled in the App**
 
-Depending on your App version, the setting may appear as **"DIY Mode"** or **"Enable External Control"**. Enable either one to unlock the RS-485 Modbus interface.
+Depending on your App version, use one of the following:
 
-> Screenshots for each App version:
->
-> *(to be added)*
+- **Option A:** Go to **Settings → Operation Mode** and select **DIY Mode**.
+- **Option B:** Go to **Settings** and toggle on **Enable External Control**.
 
-The RS-485 interface will not respond to any Modbus commands until this setting is turned on.
+The RS-485 interface will not respond to any Modbus commands until one of these is enabled.
 
 ## Quick Start
 
