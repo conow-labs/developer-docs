@@ -4,8 +4,29 @@
 
 ---
 
+## Prerequisites
+
+> **These two conditions must be met before any Modbus communication is possible.**
+
+**1. Device is activated**
+
+The device must have been commissioned and brought online in the CONOW ECO App at least once. An unactivated device will not respond on the RS-485 bus.
+
+**2. External control is enabled in the App**
+
+Depending on your App version, the setting may appear as **"DIY Mode"** or **"Enable External Control"**. Enable either one to unlock the RS-485 Modbus interface.
+
+> App screenshots by version:
+>
+> *(to be added)*
+
+The device will silently ignore all Modbus requests until this setting is turned on.
+
+---
+
 ## Table of Contents
 
+- [Prerequisites](#prerequisites)
 - [1. Overview](#1-overview)
   - [1.1 Communication Parameters](#11-communication-parameters)
 - [2. Data Types & Unit Conversion](#2-data-types--unit-conversion)
