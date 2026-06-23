@@ -13,9 +13,9 @@ Open resources for developers and DIY users integrating CONOW energy storage pro
 
 ## Products Covered
 
-- **CBE2000 Pro** ? Balcony solar storage system (all-in-one inverter + battery)
-- **Lyra Series** ? AC-coupled storage system (Lyra 2500 AC, Lyra 2500 Pro)
-- **Atlas Series** ? High-capacity storage system (Atlas 6000 AC and variants)
+- **CBE2000 Pro** — Balcony solar storage system (all-in-one inverter + battery)
+- **Lyra Series** — AC-coupled storage system (Lyra 2500 AC, Lyra 2500 Pro)
+- **Atlas Series** — High-capacity storage system (Atlas 6000 AC and variants)
 
 ## Contributing
 

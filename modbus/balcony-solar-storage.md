@@ -1,4 +1,4 @@
-# CONOW Balcony Solar Storage ? Modbus RTU API Reference
+# CONOW Balcony Solar Storage — Modbus RTU API Reference
 
 > **Disclaimer:** This document is compiled from the device's public communication protocol for reference by developers and system integrators. Conow reserves the right to update document content and product specifications. Code examples are provided "as is"; Conow is not liable for device malfunction or property damage resulting from improper use. Always read the manufacturer's safety instructions before modifying control registers.
 
@@ -72,7 +72,7 @@ Configure your host-side adapter (RS-485 to USB converter, serial server, etc.) 
 | Type       | Width              | Range                  | Notes                                                                 |
 |------------|--------------------|------------------------|-----------------------------------------------------------------------|
 | `uint16_t` | 16-bit (1 register)| 0 ? 65 535             | Unsigned integer                                                      |
-| `int16_t`  | 16-bit (1 register)| ?32 768 ? 32 767       | Signed integer; positive = discharge, negative = charge               |
+| `int16_t`  | 16-bit (1 register)| -32768 ~ 32767         | Signed integer; positive = discharge, negative = charge               |
 | `uint32_t` | 32-bit (2 registers)| 0 ? 4 294 967 295     | Big-Endian; high-word register first, low-word register second        |
 
 ### 2.2 Conversion Formula
@@ -104,8 +104,8 @@ Access with FC `0x03` or `0x04`. These registers expose live operating data and 
 | 10002         | 0x2712        | Battery Voltage          | uint16_t   | V    | 0.01  | ?                                     |
 | 10003         | 0x2713        | Battery SOC              | uint16_t   | %    | 1     | Range: 0 ? 100                        |
 | 10004         | 0x2714        | Battery Design Capacity  | uint16_t   | kWh  | 0.01  | ?                                     |
-| 10005         | 0x2715        | Cell Temp (Max)          | uint16_t   | ?C   | 0.1   | Offset: 500 (e.g. raw 250 = ?25.0 ?C)|
-| 10006         | 0x2716        | Cell Temp (Min)          | uint16_t   | ?C   | 0.1   | Offset: 500                           |
+| 10005         | 0x2715        | Cell Temp (Max)          | uint16_t   | °C   | 0.1   | Offset: 500 (e.g. raw 250 = -25.0 °C)|
+| 10006         | 0x2716        | Cell Temp (Min)          | uint16_t   | °C   | 0.1   | Offset: 500                           |
 | 10007?10008   | 0x2717        | Total Charge Energy      | uint32_t   | kWh  | 0.01  | Occupies registers 10007?10008        |
 | 10009?10010   | 0x2719        | Total Discharge Energy   | uint32_t   | kWh  | 0.01  | Occupies registers 10009?10010        |
 
@@ -153,7 +153,7 @@ Access with FC `0x03` (read) or FC `0x06` / `0x10` (write).
 | 10106         | 0x277A        | Target Power                | uint16_t   | W    | 1     | Used with register 10105; sets the actual power setpoint          |
 | 10107         | 0x277B        | Cutoff SOC                  | uint16_t   | %    | 1     | Charge upper limit or discharge lower limit; range: 0?100         |
 
-> **?? Write Order for Forced Charge/Discharge:**  
+> **⚠️ Write Order for Forced Charge/Discharge:**  
 > Always write in this order: **10106 (power) ? 10105 (direction) ? 10107 (cutoff SOC)**.  
 > Writing out of order may cause the command to be silently ignored.
 
@@ -276,7 +276,7 @@ Bit 4 = 1  ? Discharging
 | 0x0001 | Force Charge      | Grid ? battery; power set by reg 10106; stops at SOC set by reg 10107          |
 | 0x0002 | Force Discharge   | Battery ? grid/load; power set by reg 10106; stops at SOC set by reg 10107     |
 
-> **?? Write sequence:** `10106 (power)` ? `10105 (direction)` ? `10107 (cutoff SOC)`.  
+> **⚠️ Write sequence:** `10106 (power)` ? `10105 (direction)` ? `10107 (cutoff SOC)`.  
 > To stop forced mode: write `0x0000` to register 10105.
 
 ---
