@@ -5,7 +5,7 @@ Thank you for helping improve CONOW developer documentation!
 ## How to Contribute
 
 1. **Fork** this repository and create a branch from `main`.
-2. Make your changes -- fix errors, add examples, or write new guides.
+2. Make your changes — fix errors, add examples, or write new guides.
 3. **Open a Pull Request** with a clear description of what you changed and why.
 
 ## Style Guide

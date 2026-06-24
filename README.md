@@ -1,17 +1,29 @@
-# CONOW Developer Docs
+# CONOW Developer Documentation
 
-Open resources for developers and DIY users integrating CONOW energy storage products.
+Open resources for developers and DIY users who want to monitor, control, and integrate CONOW energy storage products.
 
-## Contents
+## Integration paths
+
+Pick the path that fits your setup:
+
+| Path | Best for | Connection | Where |
+|------|----------|------------|-------|
+| **Modbus RTU** | Local control, no cloud dependency, custom EMS | RS-485 (on-device) | [`modbus/`](modbus/) — in this repo |
+| **Home Assistant** | Smart-home users who want dashboards & automations | Cloud (Tuya) | [conow-labs/home-assistant](https://github.com/conow-labs/home-assistant) |
+| **Agent Skills** | AI agents (e.g. Claude) reading and controlling energy data | Cloud | [conow-labs/agent-skills](https://github.com/conow-labs/agent-skills) |
+
+> A local Modbus-based Home Assistant integration is planned. Until then, the Home Assistant path above uses the cloud (Tuya) connection.
+
+> ⚠️ Control registers and commands can change how your system charges, discharges, and feeds the grid. Read the product safety instructions before writing any control value.
+
+## What's in this repo
 
 | Directory | Description |
 |-----------|-------------|
-| [`modbus/`](modbus/) | Modbus RTU API references for local RS-485 communication |
-| [`home-assistant/`](home-assistant/) | Home Assistant integration guides *(coming soon)* |
-| [agent-skills](https://github.com/conow-labs/agent-skills) | Agent skills for monitoring and controlling CONOW devices from any AI agent |
+| [`modbus/`](modbus/) | Modbus RTU API references — register maps, data types, and frame examples |
 | [`examples/`](examples/) | Code examples in Python, Node.js, etc. *(coming soon)* |
 
-## Products Covered
+## Products covered
 
 - **CBE2000 Pro** — Balcony solar storage system (all-in-one inverter + battery)
 - **Lyra Series** — AC-coupled storage system (Lyra 2500 AC, Lyra 2500 Pro)
@@ -19,8 +31,7 @@ Open resources for developers and DIY users integrating CONOW energy storage pro
 
 ## Contributing
 
-Found an error or want to add an integration guide?  
-Open an [Issue](../../issues) or submit a Pull Request -- contributions are welcome.
+Found an error or want to add an integration guide? Open an [Issue](../../issues) or submit a Pull Request — contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 

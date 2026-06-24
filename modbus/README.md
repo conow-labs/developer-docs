@@ -1,6 +1,6 @@
 # Modbus RTU API References
 
-Local RS-485 communication guides for CONOW devices.
+Local RS-485 communication guides for CONOW devices. For other integration paths (Home Assistant, Agent Skills), see the [main README](../README.md#integration-paths).
 
 | File | Product | Protocol |
 |------|---------|----------|
@@ -27,4 +27,4 @@ The RS-485 interface will not respond to any Modbus commands until one of these 
 
 1. Connect an RS-485 to USB adapter between your host and the device RS-485 port.
 2. Configure serial parameters: **38400 baud, 8N1, device address 0xA0**.
-3. Send a standard Modbus RTU frame -- see the product-specific guide for register maps and frame examples.
+3. Send a standard Modbus RTU frame — see the product-specific guide for register maps and frame examples.
