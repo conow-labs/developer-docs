@@ -8,7 +8,7 @@ Open resources for developers and DIY users integrating CONOW energy storage pro
 |-----------|-------------|
 | [`modbus/`](modbus/) | Modbus RTU API references for local RS-485 communication |
 | [`home-assistant/`](home-assistant/) | Home Assistant integration guides *(coming soon)* |
-| [`skills/`](skills/) | CONOW skill files *(coming soon)* |
+| [agent-skills](https://github.com/conow-labs/agent-skills) | Agent skills for monitoring and controlling CONOW devices from any AI agent |
 | [`examples/`](examples/) | Code examples in Python, Node.js, etc. *(coming soon)* |
 
 ## Products Covered
