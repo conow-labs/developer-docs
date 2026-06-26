@@ -9,7 +9,7 @@ Pick the path that fits your setup:
 | Path | Best for | Connection | Where |
 |------|----------|------------|-------|
 | **Modbus RTU** | Local control, no cloud dependency, custom EMS | RS-485 (on-device) | [`modbus/`](modbus/) — in this repo |
-| **Home Assistant** | Smart-home users who want dashboards & automations | Cloud (Tuya) | [conow-labs/home-assistant](https://github.com/conow-labs/home-assistant) |
+| **Home Assistant** | Smart-home users who want dashboards & automations | Cloud (Tuya) | *Coming soon — stay tuned* |
 | **Agent Skills** | AI agents (e.g. Claude) reading and controlling energy data | Cloud | [conow-labs/agent-skills](https://github.com/conow-labs/agent-skills) |
 
 > A local Modbus-based Home Assistant integration is planned. Until then, the Home Assistant path above uses the cloud (Tuya) connection.
