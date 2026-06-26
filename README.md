@@ -12,8 +12,6 @@ Pick the path that fits your setup:
 | **Home Assistant** | Smart-home users who want dashboards & automations | Cloud (Tuya) | *Coming soon — stay tuned* |
 | **Agent Skills** | AI agents (e.g. Claude) reading and controlling energy data | Cloud | [conow-labs/agent-skills](https://github.com/conow-labs/agent-skills) |
 
-> A local Modbus-based Home Assistant integration is planned. Until then, the Home Assistant path above uses the cloud (Tuya) connection.
-
 > ⚠️ Control registers and commands can change how your system charges, discharges, and feeds the grid. Read the product safety instructions before writing any control value.
 
 ## What's in this repo
