@@ -1,6 +1,6 @@
 # Modbus RTU API References
 
-Local RS-485 communication guides for CONOW devices. For other integration paths (Home Assistant, Agent Skills), see the [main README](../README.md#integration-paths).
+Local RS-485 communication guides for CONOW devices. For other integration paths (Home Assistant Local, Home Assistant, Agent Skills), see the [main README](../README.md#integration-paths).
 
 | File | Product | Protocol |
 |------|---------|----------|
