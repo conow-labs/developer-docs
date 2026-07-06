@@ -9,7 +9,7 @@ Pick the path that fits your setup:
 | Path | Best for | Connection | Where |
 |------|----------|------------|-------|
 | **Modbus RTU** | Local control, no cloud dependency, custom EMS | RS-485 (on-device) | [`modbus/`](modbus/) — in this repo |
-| **Home Assistant** | Smart-home users who want dashboards & automations | Cloud (Tuya) | *Coming soon — stay tuned* |
+| **Home Assistant** | Smart-home users who want dashboards, automations, and CONOW energy entities | Cloud (Tuya) | [conow-labs/home-assistant](https://github.com/conow-labs/home-assistant) |
 | **Agent Skills** | AI agents (e.g. Claude) reading and controlling energy data | Cloud | [conow-labs/agent-skills](https://github.com/conow-labs/agent-skills) |
 
 > ⚠️ Control registers and commands can change how your system charges, discharges, and feeds the grid. Read the product safety instructions before writing any control value.
