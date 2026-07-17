@@ -241,7 +241,7 @@ Register 10000 is a bitmask. Parse each bit independently; Bit 0 is the LSB.
 | Bit       | Description     | Meaning                                             |
 |-----------|-----------------|-----------------------------------------------------|
 | Bit 0     | Standby         | `0` = not in standby, `1` = device in standby mode |
-| Bit 1     | Running         | `0` = not running, `1` = normal operation           |
+| Bit 1     | /               | Reserved                                           |
 | Bit 2     | Fault           | `0` = healthy, `1` = fault active (read reg 10001) |
 | Bit 3     | Charging        | `0` = no, `1` = battery is charging                |
 | Bit 4     | Discharging     | `0` = no, `1` = battery is discharging             |
