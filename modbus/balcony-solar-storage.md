@@ -247,7 +247,7 @@ Register 10000 is a bitmask. Parse each bit independently; Bit 0 is the LSB.
 | Bit 4     | Discharging     | `0` = no, `1` = battery is discharging             |
 | Bit 5–15  | Reserved        | Ignore; reserved for future use                     |
 
-**Example:** If register 10000 returns `0x000A` (binary `0000 1010`), then Bit 1 (Running) = 1 and Bit 3 (Charging) = 1, meaning the device is operating normally and the battery is currently charging.
+**Example:** If register 10000 returns `0x0009` (binary `0000 1001`), then Bit 0 (Standby) = 1 and Bit 3 (Charging) = 1, meaning the device is in standby mode and the battery is currently charging.
 
 ---
 
