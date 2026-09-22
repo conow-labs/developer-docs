@@ -378,5 +378,5 @@ Register 10000 is a bitmask. Parse each bit independently; Bit 0 is the LSB.
 2. **CRC validation:** The device silently discards any frame with an incorrect CRC-16. If a request receives no response, verify the CRC before suspecting wiring or address issues.
 3. **Write range enforcement:** The device ignores writes to read/write registers whose value falls outside the permitted range, or may return a Modbus exception response.
 4. **Retry strategy:** RS-485 is susceptible to electromagnetic interference. Implement a retry mechanism of up to **3 attempts** with a minimum interval of **500 ms** between each attempt on timeout or CRC error.
-5. **Polling interval:** Do not poll faster than **2 seconds** for real-time data. Excessive polling can saturate the RS-485 bus and cause missed responses.
+5. **Polling interval:** The polling interval for real-time data shall **not exceed 2 seconds**. Excessive polling can saturate the RS-485 bus and cause missed responses.
 
