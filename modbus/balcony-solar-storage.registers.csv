@@ -1,0 +1,35 @@
+section,register,hex,name,type,unit,scale,remarks
+System and battery,10000,0x2710,System Status,uint16_t,—,—,See [Section 5.1](#51-system-status-bit-map-register-10000)
+System and battery,10001,0x2711,Fault Code Definition,uint16_t,—,—,—
+System and battery,10002,0x2712,Battery Voltage,uint16_t,V,0.01,—
+System and battery,10003,0x2713,Battery Remaining Capacity (SOC),uint16_t,%,1,Range: 0–100
+System and battery,10004,0x2714,Battery Design Capacity,uint16_t,kWh,0.01,—
+System and battery,10005,0x2715,Cell Temp (Max),uint16_t,°C,0.1,"Offset: 500; that is, `(raw − 500) × 0.1 °C`"
+System and battery,10006,0x2716,Cell Temp (Min),uint16_t,°C,0.1,"Offset: 500; that is, `(raw − 500) × 0.1 °C`"
+System and battery,10007–10008,0x2717,Battery Cumulative Charge Energy,uint32_t,kWh,0.01,Occupies registers 10007–10008
+System and battery,10009–10010,0x2719,Battery Cumulative Discharge Energy,uint32_t,kWh,0.01,Occupies registers 10009–10010
+Grid and bypass,10011,0x271B,Grid Active Power,int16_t,W,1,"CBE: positive = feed-in, negative = import; Lyra / Atlas: positive = import, negative = feed-in"
+Grid and bypass,10012,0x271C,Grid Frequency,uint16_t,Hz,1,"For example, raw `50` = 50 Hz"
+Grid and bypass,10013–10014,0x271D,Cumulative Grid Import Energy,uint32_t,kWh,0.01,Occupies registers 10013–10014
+Grid and bypass,10015–10016,0x271F,Cumulative Grid Export Energy,uint32_t,kWh,0.01,Occupies registers 10015–10016
+Grid and bypass,10017,0x2721,Bypass Power,int16_t,W,1,Positive = discharge; negative = charge
+Grid and bypass,10018–10019,0x2722,Bypass Cumulative Output Energy,uint32_t,kWh,0.01,Occupies registers 10018–10019
+Grid and bypass,10020–10021,0x2724,Bypass Cumulative Input Energy,uint32_t,kWh,0.01,Occupies registers 10020–10021
+PV input,10022,0x2726,PV Total Input Power,uint16_t,W,1,Sum of all PV channel inputs
+PV input,10023–10024,0x2727,PV Cumulative Total Energy,uint32_t,kWh,0.01,Occupies registers 10023–10024
+PV input,10025,0x2729,PV1 Input Power,uint16_t,W,1,—
+PV input,10026–10027,0x272A,PV1 Cumulative Energy,uint32_t,kWh,0.01,Occupies registers 10026–10027
+PV input,10028,0x272C,PV2 Input Power,uint16_t,W,1,—
+PV input,10029–10030,0x272D,PV2 Cumulative Energy,uint32_t,kWh,0.01,Occupies registers 10029–10030
+PV input,10031,0x272F,PV3 Input Power,uint16_t,W,1,—
+PV input,10032–10033,0x2730,PV3 Cumulative Energy,uint32_t,kWh,0.01,Occupies registers 10032–10033
+PV input,10034,0x2732,PV4 Input Power,uint16_t,W,1,—
+PV input,10035–10036,0x2733,PV4 Cumulative Energy,uint32_t,kWh,0.01,Occupies registers 10035–10036
+3.2 Parameter settings and control (read/write),10100,0x2774,AC Charge Power Limit,uint16_t,W,1,Max grid-to-battery charge power; default 800
+3.2 Parameter settings and control (read/write),10101,0x2775,Discharge Power Limit,uint16_t,W,1,Max grid-tie output power; default 800
+3.2 Parameter settings and control (read/write),10102,0x2776,Backup SOC,uint16_t,%,1,Reserved SOC for backup power; 10–100
+3.2 Parameter settings and control (read/write),10103,0x2777,Off-Grid Output Switch,uint16_t,—,—,"`0` = off, `1` = on"
+3.2 Parameter settings and control (read/write),10104,0x2778,PV Curtailment Switch,uint16_t,—,—,"`0` = off (charge / grid-tie priority), `1` = on (limit PV input)"
+3.2 Parameter settings and control (read/write),10105,0x2779,Charge/Discharge Direction Control,uint16_t,—,—,"`0` = idle, `1` = force charge, `2` = force discharge"
+3.2 Parameter settings and control (read/write),10106,0x277A,Target Charge/Discharge Power,uint16_t,W,—,Used with register 10105; sets the actual power setpoint
+3.2 Parameter settings and control (read/write),10107,0x277B,Charge/Discharge Cutoff SOC,uint16_t,%,—,Charge upper limit or discharge lower limit; 10–100
