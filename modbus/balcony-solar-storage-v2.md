@@ -4,7 +4,7 @@
 > **Applies to:** devices whose firmware responds at the firmware-version
 > register 10062–10063 (see [Firmware version check](#firmware-version-check)).
 > These are the **v2 register addresses** (minimum firmware version per model:
-> Lyra Series 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.08). Devices on
+> Lyra Series 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.09). Devices on
 > firmware below the versions above: use
 > [balcony-solar-storage.md](balcony-solar-storage.md) (v1 register map).
 
@@ -75,7 +75,7 @@ The two register maps are **mutually exclusive**: a device answers either the v1
 | --- | --- |
 | Lyra Series | 1.01.16 |
 | CBE2000 Pro | 1.02.18 |
-| Atlas 6000 AC | 1.01.08 |
+| Atlas 6000 AC | 1.01.09 |
 
 Firmware below the versions in the table uses the v1 register addresses by default. When you are not sure which register-address version to use, check as follows after connecting:
 

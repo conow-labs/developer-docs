@@ -55,7 +55,7 @@ prüfen, dann verwenden:
 
 | Dokument | Firmware | Registerbereich |
 | --- | --- | --- |
-| [balcony-solar-storage-v2.de.md](modbus/balcony-solar-storage-v2.de.md) | **ab der v2-Mindestversion** (Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.08) | Monitoring 10000–10081 · Steuerung 10100–10190 · Protokoll 9984–9986 |
+| [balcony-solar-storage-v2.de.md](modbus/balcony-solar-storage-v2.de.md) | **ab der v2-Mindestversion** (Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.09) | Monitoring 10000–10081 · Steuerung 10100–10190 · Protokoll 9984–9986 |
 | [balcony-solar-storage.de.md](modbus/balcony-solar-storage.de.md) | unter der v2-Mindestversion (alt) | Monitoring 10000–10036 · Steuerung 10100–10107 |
 
 **Versionsprüfung:** mit FC 0x03 die Firmware-Version-Register 10062–10063 lesen

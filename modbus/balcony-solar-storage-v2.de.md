@@ -4,7 +4,7 @@
 > **Gilt für:** Geräte, deren Firmware auf den Firmware-Version-Registern
 > 10062–10063 antwortet (siehe [Firmware-Versionsprüfung](#firmware-versionsprüfung)).
 > Dies sind die **v2-Registeradressen**. Die Mindest-Firmware-Version unterscheidet
-> sich je Modell: Lyra Serie 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.08
+> sich je Modell: Lyra Serie 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.09
 > oder neuer. Firmware unter diesen Versionen: verwende
 > [balcony-solar-storage.de.md](balcony-solar-storage.de.md)
 > (v1-Registerübersicht).
@@ -77,7 +77,7 @@ Die beiden Registerübersichten schließen sich gegenseitig aus: Ein Gerät antw
 | --- | --- |
 | Lyra Serie | 1.01.16 |
 | CBE2000 Pro | 1.02.18 |
-| Atlas 6000 AC | 1.01.08 |
+| Atlas 6000 AC | 1.01.09 |
 
 Firmware unter diesen Versionen verwendet standardmäßig die v1-Registeradressen. Wenn du nicht sicher bist, welche Übersicht ein Gerät verwendet, prüfe einmalig nach dem Verbinden:
 

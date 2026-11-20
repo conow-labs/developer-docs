@@ -55,7 +55,7 @@ dan gebruiken:
 
 | Document | Firmware | Registerbereik |
 | --- | --- | --- |
-| [balcony-solar-storage-v2.nl.md](modbus/balcony-solar-storage-v2.nl.md) | **vanaf de v2-minimumversie** (Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.08) | monitoring 10000–10081 · besturing 10100–10190 · protocol 9984–9986 |
+| [balcony-solar-storage-v2.nl.md](modbus/balcony-solar-storage-v2.nl.md) | **vanaf de v2-minimumversie** (Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.09) | monitoring 10000–10081 · besturing 10100–10190 · protocol 9984–9986 |
 | [balcony-solar-storage.nl.md](modbus/balcony-solar-storage.nl.md) | onder de v2-minimumversie (oud) | monitoring 10000–10036 · besturing 10100–10107 |
 
 **Versiecontrole:** lees met FC 0x03 de firmwareversieregisters 10062–10063 (vanaf

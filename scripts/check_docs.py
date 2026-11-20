@@ -15,7 +15,7 @@ READMES = ["README.md", "README.zh-CN.md", "README.de.md", "README.nl.md"]
 V2 = [f"modbus/balcony-solar-storage-v2{ext}.md" for ext in ["", ".zh-CN", ".de", ".nl"]]
 V1 = [f"modbus/balcony-solar-storage{ext}.md" for ext in ["", ".zh-CN", ".de", ".nl"]]
 
-TRIPLET = "Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.08"
+TRIPLET = "Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.09"
 FACTS = [
     ("v2 minimum firmware triplet", TRIPLET, READMES),
     # Per-model version strings also appear in the v2 guides' header quotes and
@@ -23,7 +23,7 @@ FACTS = [
     # version is pinned on its own as well.
     ("v2 minimum Lyra 1.01.16", "1.01.16", READMES + ["modbus/README.md"] + V2),
     ("v2 minimum CBE2000 Pro 1.02.18", "1.02.18", READMES + ["modbus/README.md"] + V2),
-    ("v2 minimum Atlas 1.01.08", "1.01.08", READMES + ["modbus/README.md"] + V2),
+    ("v2 minimum Atlas 1.01.09", "1.01.09", READMES + ["modbus/README.md"] + V2),
     ("version-check registers 10062–10063", "10062–10063", READMES + ["modbus/README.md"] + V2),
     ("version-check start 0x274E", "0x274E", READMES + ["modbus/README.md"] + V2),
     ("TCP verification registers 9985–9986", "9985–9986", READMES + V2),
