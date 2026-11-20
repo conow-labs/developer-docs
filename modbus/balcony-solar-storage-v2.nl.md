@@ -127,9 +127,10 @@ Ook de tekenconventie van het actieve netvermogen is gewijzigd: op v1 rapporteer
 
 ### Verificatiecode (directe Modbus TCP, all-in-one-apparaten)
 
-**Modbus RTU heeft geen verificatiecode nodig; Modbus TCP wel.** Verbind via
-TCP en schrijf daarna de 8-tekens hexadecimale verificatiecode (op te halen
-via de apparaatdetailpagina in de CONOW-app) naar het apparaat:
+**Modbus RTU heeft geen verificatiecode nodig; directe Modbus TCP vereist dat
+de TCP-schakelaar in de app is ingeschakeld en de verificatie is voltooid.**
+Verbind via TCP en schrijf daarna de 8-tekens hexadecimale verificatiecode
+(op te halen via de apparaatdetailpagina in de CONOW-app) naar het apparaat:
 
 - Schrijf deze als een **uint32** naar holding registers
   **9985–9986 (0x2701–0x2702)**, hoogste woord eerst.
@@ -193,8 +194,9 @@ minstens eenmaal online zijn geweest — een fabrieksnieuw, nooit geactiveerd
 apparaat beantwoordt geen enkel verzoek op de RS-485-interface.
 
 1. Schakel in de app onder *Apparaten → jouw apparaat → Instellingen* de
-   optie *Modbus-service inschakelen* in; ontbreekt de schakelaar in oudere
-   app-versies, kies dan onder *Instellingen → Bedrijfsmodus* voor *DIY-modus*.
+   optie *Modbus-service inschakelen* in; schakel voor directe TCP ook de
+   TCP-schakelaar in. Ontbreekt de schakelaar in oudere app-versies, kies dan
+   onder *Instellingen → Bedrijfsmodus* voor *DIY-modus*.
 2. Houd schrijfacties telkens bij één master — zie
    [Gelijktijdige RTU en TCP](#gelijktijdige-rtu-en-tcp-schrijfprioriteit).
 
@@ -334,9 +336,9 @@ Alle uint32, kWh × 0.01, hoogste woord eerst, alleen lezen, monoton toenemend.
 
 ### 3.5 Besturing — vermogens- en SoC-instellingen (10100–10102)
 
-Schrijf de drie registers van deze groep **samen in één FC 0x10-frame**, zodat
-de vermogenslimieten en de beschermingsdrempel nooit uiteenlopen. Alle drie
-blijven bewaard na spanningsuitval.
+De drie registers in deze groep kunnen afzonderlijk met FC 0x06 of samen met
+FC 0x10 worden geschreven; alle drie blijven bewaard na spanningsuitval.
+Alleen 10103–10106 moeten als één atomaire FC 0x10-groep worden geschreven.
 
 | Register | Hex | Naam | Type | Eenheid | Opmerkingen |
 | --- | --- | --- | --- | --- | --- |
@@ -697,7 +699,9 @@ Lees- en schrijfopdrachten gebruiken alleen FC 0x03 / 0x06 / 0x10, en de standaa
 | 0x02 | Ongeldig data-adres | register bestaat niet, of wordt door dit model niet ondersteund; tijdens een TCP-verificatievergrendeling krijgen lees- en schrijfopdrachten 0x02 terug (lezen van 9984 uitgezonderd) |
 | 0x03 | Ongeldige gegevenswaarde | geschreven waarde buiten het bereik |
 
-0x04 / 0x05 zijn exceptioncodes van de verificatielaag bij directe Modbus TCP — ze verschijnen nooit in antwoorden op lees- of schrijfopdrachten (zie [Verificatiecode](#verificatiecode-directe-modbus-tcp-all-in-one-apparaten)):
+0x04 / 0x05 zijn apparaatgedefinieerde statuscodes van de verificatielaag bij
+directe Modbus TCP, geen standaard exception-antwoorden voor lezen/schrijven
+met FC 0x03 / 0x06 / 0x10; zie [Verificatiecode](#verificatiecode-directe-modbus-tcp-all-in-one-apparaten) voor de scenario's van de verificatielaag:
 
 | Code | Betekenis | Typische oorzaak |
 | --- | --- | --- |

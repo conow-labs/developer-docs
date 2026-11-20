@@ -128,8 +128,9 @@ Auch die Vorzeichenkonvention der Netz-Wirkleistung hat sich geändert: Auf v1 m
 
 ### Bestätigungscode (direktes Modbus TCP, All-in-One-Geräte)
 
-**Modbus RTU benötigt keinen Bestätigungscode; Modbus TCP benötigt einen.**
-Verbinde dich über TCP und schreibe danach den 8-stelligen hexadezimalen
+**Modbus RTU benötigt keinen Bestätigungscode; direktes Modbus TCP erfordert,
+dass der TCP-Schalter in der App aktiviert und die Verifizierung abgeschlossen
+ist.** Verbinde dich über TCP und schreibe danach den 8-stelligen hexadezimalen
 Bestätigungscode (abzurufen über die Gerätedetailseite in der CONOW-App) in
 das Gerät:
 
@@ -199,9 +200,9 @@ mindestens einmal online gegangen sein — ein fabrikneues, nie aktiviertes
 Gerät beantwortet keine Anfrage an der RS-485-Schnittstelle.
 
 1. Aktiviere in der App unter *Geräte → dein Gerät → Einstellungen* die
-   Option *Modbus-Dienst aktivieren*; fehlt der Schalter in älteren
-   App-Versionen, wähle stattdessen unter *Einstellungen → Betriebsmodus* den
-   *DIY-Modus*.
+   Option *Modbus-Dienst aktivieren*; für direktes TCP aktiviere zusätzlich
+   den TCP-Schalter. Fehlt der Schalter in älteren App-Versionen, wähle
+   stattdessen unter *Einstellungen → Betriebsmodus* den *DIY-Modus*.
 2. Schreibzugriffe jederzeit auf einen einzelnen Master beschränken — siehe
    [Gleichzeitiges RTU und TCP](#gleichzeitiges-rtu-und-tcp-schreib-priorität).
 
@@ -342,9 +343,9 @@ Alle uint32, kWh × 0.01, hohes Wort zuerst, nur lesbar, monoton steigend.
 
 ### 3.5 Steuerung — Leistungs- und SoC-Einstellungen (10100–10102)
 
-Schreibe die drei Register dieser Gruppe **gemeinsam in einem FC-0x10-Frame**,
-damit die Leistungslimits und die Schutzschwelle nie auseinanderlaufen. Alle
-drei überstehen Stromausfälle.
+Die drei Register dieser Gruppe können einzeln mit FC 0x06 oder gemeinsam mit
+FC 0x10 geschrieben werden; alle drei überstehen Stromausfälle. Nur
+10103–10106 müssen als eine atomare FC-0x10-Gruppe geschrieben werden.
 
 | Register | Hex | Name | Typ | Einheit | Bemerkungen |
 | --- | --- | --- | --- | --- | --- |
@@ -705,7 +706,10 @@ Lese- und Schreibbefehle nutzen nur FC 0x03 / 0x06 / 0x10, und die Standard-Exce
 | 0x02 | Unzulässige Datenadresse | Register existiert nicht oder wird von diesem Modell nicht unterstützt; während einer TCP-Verifizierungssperre werden Lese- und Schreibzugriffe mit 0x02 beantwortet (Lesen von 9984 ausgenommen) |
 | 0x03 | Unzulässiger Datenwert | geschriebener Wert außerhalb des Bereichs |
 
-0x04 / 0x05 sind Exception-Codes der Verifizierungsschicht bei direktem Modbus TCP — sie erscheinen nie in Antworten auf Lese- oder Schreibbefehle (siehe [Bestätigungscode](#bestätigungscode-direktes-modbus-tcp-all-in-one-geräte)):
+0x04 / 0x05 sind gerätespezifische Statuscodes der Verifizierungsschicht bei
+direktem Modbus TCP, keine Standard-Lese-/Schreib-Exception-Antworten für
+FC 0x03 / 0x06 / 0x10; die Szenarien der Verifizierungsschicht stehen unter
+[Bestätigungscode](#bestätigungscode-direktes-modbus-tcp-all-in-one-geräte):
 
 | Code | Bedeutung | Typische Ursache |
 | --- | --- | --- |

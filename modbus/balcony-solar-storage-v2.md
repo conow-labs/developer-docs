@@ -126,7 +126,8 @@ Grid Active Power sign conventions also changed: on v1 the CBE2000 Pro reports p
 
 ### Verification code (Modbus TCP direct, all-in-one machines)
 
-**Modbus RTU needs no verification code; Modbus TCP requires one.** After
+**Modbus RTU needs no verification code; direct Modbus TCP requires the TCP
+switch to be enabled in the App and verification to be completed.** After
 connecting over TCP, write the 8-character hexadecimal verification code
 (available on the device details page in the CONOW App) to the device:
 
@@ -184,8 +185,9 @@ online at least once — a factory-fresh, never-activated device does not respon
 to any request on the RS-485 interface.
 
 1. In the app, go to *Devices → your device → Settings* and turn on *Enable
-   Modbus service*; on older app versions the switch is absent — use *Settings →
-   Operation Mode* and select *DIY Mode* instead.
+   Modbus service*; for direct TCP, also turn on the TCP switch. On older app
+   versions the switch is absent — use *Settings → Operation Mode* and select
+   *DIY Mode* instead.
 2. Keep writes to a single master at a time — see
    [Concurrent RTU and TCP](#concurrent-rtu-and-tcp-write-priority).
 
@@ -324,9 +326,9 @@ All uint32, kWh × 0.01, high word first, read-only, monotonically increasing.
 
 ### 3.5 Control — power and SoC settings (10100–10102)
 
-Write the three registers of this group **together in one FC 0x10 frame**, so
-the power limits and the protection threshold never diverge. All three survive
-power cycles.
+The three registers in this group can be written individually with FC 0x06 or
+together with FC 0x10; all three survive power cycles. Only 10103–10106 must
+be written as one atomic FC 0x10 group.
 
 | Register | Hex | Name | Type | Unit | Remarks |
 | --- | --- | --- | --- | --- | --- |
@@ -678,7 +680,9 @@ Reads and writes only use FC 0x03 / 0x06 / 0x10, and the standard exception code
 | 0x02 | Illegal data address | register does not exist, or not supported by this model; during a TCP verification lockout, reads and writes all return 0x02 (reading 9984 excepted) |
 | 0x03 | Illegal data value | written value out of range |
 
-0x04 / 0x05 are exception codes returned by the TCP-direct verification layer — they never appear in answers to read or write commands (see [Verification code](#verification-code-modbus-tcp-direct-all-in-one-machines)):
+0x04 / 0x05 are device-defined status codes returned by the TCP-direct
+verification layer, not standard read/write exception responses for FC 0x03 /
+0x06 / 0x10; see [Verification code](#verification-code-modbus-tcp-direct-all-in-one-machines) for the verification-layer scenarios:
 
 | Code | Meaning | Typical cause |
 | --- | --- | --- |
