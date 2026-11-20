@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > **适用于**：固件版本寄存器 10062–10063 有应答的设备（见[固件版本检查](#固件版本检查)）。
-> 即 **v2 寄存器地址**（各机型最低固件版本：Lyra 系列 1.01.16、CBE2000 Pro 1.02.17、Atlas 6000 AC 1.01.08）。
+> 即 **v2 寄存器地址**（各机型最低固件版本：Lyra 系列 1.01.16、CBE2000 Pro 1.02.18、Atlas 6000 AC 1.01.08）。
 > 固件低于上述版本的设备请使用 [balcony-solar-storage.zh-CN.md](balcony-solar-storage.zh-CN.md)（v1 寄存器表）。
 
 语言 / Languages / Sprache / Taal: [English](balcony-solar-storage-v2.md) · **简体中文** · [Deutsch](balcony-solar-storage-v2.de.md) · [Nederlands](balcony-solar-storage-v2.nl.md)
@@ -66,7 +66,7 @@ TCP 可同时启用，写入遵循 RTU 优先的仲裁规则。
 | 机型 | 最低固件版本 |
 | --- | --- |
 | Lyra 系列 | 1.01.16 |
-| CBE2000 Pro | 1.02.17 |
+| CBE2000 Pro | 1.02.18 |
 | Atlas 6000 AC | 1.01.08 |
 
 低于上表版本的固件默认使用 v1 寄存器地址。不确定使用哪个版本寄存器地址时，连接后按以下方法检查：

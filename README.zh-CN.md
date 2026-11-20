@@ -46,7 +46,7 @@ Modbus 寄存器表自 **v2 固件**起分为两版，互相不兼容，先检�
 
 | 文档 | 适用固件 | 寄存器范围 |
 | --- | --- | --- |
-| [balcony-solar-storage-v2.zh-CN.md](modbus/balcony-solar-storage-v2.zh-CN.md) | **达到 v2 最低版本及以上**（Lyra 1.01.16 · CBE2000 Pro 1.02.17 · Atlas 1.01.08） | 监控 10000–10081 · 控制 10100–10190 · 协议 9984–9986 |
+| [balcony-solar-storage-v2.zh-CN.md](modbus/balcony-solar-storage-v2.zh-CN.md) | **达到 v2 最低版本及以上**（Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.08） | 监控 10000–10081 · 控制 10100–10190 · 协议 9984–9986 |
 | [balcony-solar-storage.zh-CN.md](modbus/balcony-solar-storage.zh-CN.md) | 低于 v2 最低版本（旧版） | 监控 10000–10036 · 控制 10100–10107 |
 
 **版本检查**：用 FC 0x03 读取固件版本寄存器 10062–10063（起始 10062，0x274E，数量 2）。  

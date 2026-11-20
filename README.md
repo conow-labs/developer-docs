@@ -44,7 +44,7 @@ The Modbus register layout changed with the v2 firmware — the two maps below a
 
 | Document | Firmware | Scope |
 |----------|----------|-------|
-| [balcony-solar-storage-v2.md](modbus/balcony-solar-storage-v2.md) | **at or above the v2 minimum** (Lyra 1.01.16 · CBE2000 Pro 1.02.17 · Atlas 1.01.08) | Monitoring 10000–10081 · Control 10100–10190 · Protocol 9984–9986 |
+| [balcony-solar-storage-v2.md](modbus/balcony-solar-storage-v2.md) | **at or above the v2 minimum** (Lyra 1.01.16 · CBE2000 Pro 1.02.18 · Atlas 1.01.08) | Monitoring 10000–10081 · Control 10100–10190 · Protocol 9984–9986 |
 | [balcony-solar-storage.md](modbus/balcony-solar-storage.md) | below the v2 minimum (legacy) | Monitoring 10000–10036 · Control 10100–10107 |
 
 **Version check:** read the firmware-version registers 10062–10063 (start 10062, 0x274E, quantity 2) with FC 0x03.  

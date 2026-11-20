@@ -16,7 +16,7 @@ Local communication guides for CONOW devices. For other integration paths (Home 
 > Each English guide also has a derived machine-readable register list next to it (`balcony-solar-storage-v2.registers.csv`, `balcony-solar-storage.registers.csv`) — regenerate them with `python3 scripts/gen_registers_csv.py` from the repo root after editing the register tables.
 
 > [!WARNING]
-> The v1 and v2 register maps are **not interchangeable**. The v2 minimum firmware version differs per model — **Lyra Series 1.01.16, CBE2000 Pro 1.02.17, Atlas 6000 AC 1.01.08**; firmware below these versions uses the v1 map. Run the firmware version check in [Quick Start](#quick-start) before reading or writing any register beyond the basic link check.
+> The v1 and v2 register maps are **not interchangeable**. The v2 minimum firmware version differs per model — **Lyra Series 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.08**; firmware below these versions uses the v1 map. Run the firmware version check in [Quick Start](#quick-start) before reading or writing any register beyond the basic link check.
 
 ## Prerequisites
 

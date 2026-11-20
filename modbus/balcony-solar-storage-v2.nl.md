@@ -4,7 +4,7 @@
 > **Van toepassing op:** apparaten waarvan de firmware antwoordt op de
 > firmwareversieregisters 10062–10063 (zie [Firmware-versiecontrole](#firmware-versiecontrole)).
 > Dit zijn de **v2-registeradressen**. De minimale firmware-versie verschilt per
-> model: Lyra serie 1.01.16, CBE2000 Pro 1.02.17, Atlas 6000 AC 1.01.08 of nieuwer.
+> model: Lyra serie 1.01.16, CBE2000 Pro 1.02.18, Atlas 6000 AC 1.01.08 of nieuwer.
 > Firmware onder deze versies: gebruik
 > [balcony-solar-storage.nl.md](balcony-solar-storage.nl.md) (v1-registeroverzicht).
 
@@ -75,7 +75,7 @@ De twee registeroverzichten sluiten elkaar uit: een apparaat antwoordt of op de 
 | Model | Minimale firmware |
 | --- | --- |
 | Lyra serie | 1.01.16 |
-| CBE2000 Pro | 1.02.17 |
+| CBE2000 Pro | 1.02.18 |
 | Atlas 6000 AC | 1.01.08 |
 
 Firmware onder deze versies gebruikt standaard de v1-registeradressen. Weet je niet zeker welk overzicht een apparaat gebruikt, controleer dit eenmaal na het verbinden:
